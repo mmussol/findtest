@@ -23,6 +23,21 @@ var myApp = (function($) {
       listTemplate = _.template($('#listTemplate').html());
     },
 
+    events: {
+        'click #popupPanelTrigger': 'openPopUp',
+        'click #leftPanelTrigger': 'openMenuPopUp'
+    },
+
+    openMenuPopUp: function(e) {
+        e.preventDefault();
+        $('#leftPanel').popup('open');
+    },
+
+    openPopUp: function(e) {
+        e.preventDefault();
+        $('#popupPanel').popup('open');
+    },
+
     render: function(eventName) {
       var collection = this.collection,
         listContainer = $('<ul data-role="listview" id="todoList"></ul>');

@@ -4,6 +4,21 @@
     <title>StackMob - Master/Detail</title>
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <style>
+      #popupPanel-popup {
+        right: 0 !important;
+        left: auto !important;
+        }
+      #popupPanel {
+        width: 550px;
+        border: 3px solid #000;
+        margin: 10px;
+        }
+      #leftPanel {
+        border: 3px solid #000;
+        margin-left: 10px;
+        }
+    </style>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
     <script type="text/javascript">
@@ -33,7 +48,55 @@
     <script type="text/template" id="home">
         <div data-role="header">
             <h1>StackMob ToDo</h1>
-            <a href="#add" data-role="button" data-icon="add" class="ui-btn-right">Add</a>
+            <!-- //<a href="#add" data-role="button" data-icon="add" class="ui-btn-left">Add</a> -->
+
+            <a id="leftPanelTrigger" href="#leftPanel" data-role="button" data-inline="true" data-mini="true" data-icon="arrow-l" data-iconpos="left">Menu</a>
+
+            <div data-role="popup" id="leftPanel" data-theme="a">
+                <ul data-role="listview" data-theme="a" class="nav-search">
+                    <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                    <li><a href="#demo-landing-page">Accessibility</a></li>
+                    <li><a href="#demo-landing-page">Accordions</a></li>
+                    <li><a href="#demo-landing-page">Ajax navigation model</a></li>
+                    <li><a href="#demo-landing-page">Anatomy of a page</a></li>
+                </ul>
+            </div>
+
+            <a id="popupPanelTrigger" href="#popupPanel" data-rel="popup" data-position-to="window" data-role="button" class="ui-btn-right">Remote</a>
+             
+            <div data-role="popup" id="popupPanel" data-corners="true" data-theme="a" data-shadow="false" data-transition="slide" data-tolerance="70,70">
+              <div class="ui-grid-d"">
+                <div class="ui-block-a"><button data-theme="b" onclick="handleClick('GUIDE')">GUIDE</button></div>
+                <div class="ui-block-b"><button data-theme="b" onclick="handleClick('LIST')">LIST</button></div>
+                <div class="ui-block-c"><button data-theme="b" onclick="handleClick('MENU')">MENU</button></div>
+                <div class="ui-block-d"><button data-theme="b" onclick="handleClick('INFO')">INFO</button></div>
+                <div class="ui-block-e"><button data-theme="b" onclick="handleClick('EXIT')">EXIT</button></div>
+
+                <div class="ui-block-a"><button data-theme="c" onclick="handleClick('1')">1</button></div>
+                <div class="ui-block-b"><button data-theme="c" onclick="handleClick('2')">2 abc</button></div>
+                <div class="ui-block-c"><button data-theme="c" onclick="handleClick('3')">3 def</button></div>
+                <div class="ui-block-e"><button data-theme="b" onclick="handleClick('PREV')">PREV</button></div>
+                <div class="ui-block-e"><button data-theme="a" onclick="handleClick('UP')" data-icon="arrow-u" data-iconpos="right">UP</button></div>
+
+                <div class="ui-block-a"><button data-theme="c" onclick="handleClick('4')">4 ghi</button></div>
+                <div class="ui-block-b"><button data-theme="c" onclick="handleClick('5')">5 jkl</button></div>
+                <div class="ui-block-c"><button data-theme="c" onclick="handleClick('6')">6 mno</button></div>
+                <div class="ui-block-d"><button data-theme="e" onclick="handleClick('SELECT')">SEL</button></div>
+                <div class="ui-block-d"><button data-theme="a" onclick="handleClick('DOWN')" data-icon="arrow-d" data-iconpos="right">DN</button></div>
+
+                <div class="ui-block-a"><button data-theme="c" onclick="handleClick('7')">7 pqrs</button></div>
+                <div class="ui-block-b"><button data-theme="c" onclick="handleClick('8')">8 tuv</button></div>
+                <div class="ui-block-c"><button data-theme="c" onclick="handleClick('9')">9 wxyz</button></div>
+                <div class="ui-block-d"><button data-theme="a" onclick="handleClick('LEFT')" data-icon="arrow-l" data-iconpos="left">LT</button></div>
+                <div class="ui-block-e"><button data-theme="a" onclick="handleClick('RIGHT')" data-icon="arrow-r" data-iconpos="right">RT</button></div>
+
+                <div class="ui-block-a"><button data-theme="c" onclick="handleClick('DASH')">-</button></div>
+                <div class="ui-block-b"><button data-theme="c" onclick="handleClick('0')">0 _</button></div>
+                <div class="ui-block-c"><button data-theme="c" onclick="handleClick('ENTER')">ENTER</button></div>
+                <div class="ui-block-e"><button data-theme="a" onclick="handleClick('CHAN_DOWN')">CH DN</button></div>
+                <div class="ui-block-d"><button data-theme="a" onclick="handleClick('CHAN_UP')">CH UP</button></div>
+              </div>
+            </div>
         </div>
         <div data-role="content"></div>
     </script>
