@@ -25,12 +25,6 @@ var myApp = (function($) {
 
     events: {
         'click #popupPanelTrigger': 'openPopUp',
-        'click #leftPanelTrigger': 'openMenuPopUp'
-    },
-
-    openMenuPopUp: function(e) {
-        e.preventDefault();
-        $('#leftPanel').popup('open');
     },
 
     openPopUp: function(e) {
